@@ -23,6 +23,7 @@
   "scripts": {
     "build": "rollup -c",
     "start": "http-server",
+    "test": "cypress run",
     "cy:open": "cypress open",
     "cy:run": "cypress run",
     "cy:run:chrome": "cypress run --browser chrome",
