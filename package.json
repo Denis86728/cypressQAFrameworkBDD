@@ -22,7 +22,7 @@
   },
   "scripts": {
     "start": "serve --listen ${PORT:-8080}",
-    "test": "cypress run --config-file=cypress.config.js",
+    "test": "cypress run",
     "cy:open": "cypress open",
     "cy:run": " cypress run",
     "cy:run:chrome": "cypress run --browser chrome",
