@@ -21,7 +21,7 @@
     "wdio-selenium-standalone-service": "^0.0.12"
   },
   "scripts": {
-    "start": "serve --listen ${PORT:-8080}",
+    "start": "serve --listen ${PORT:-3000}",
     "test": "cypress run",
     "cy:open": "cypress open",
     "cy:run": " cypress run",
