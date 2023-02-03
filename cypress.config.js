@@ -1,6 +1,7 @@
 const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
+  "projectId": "q3wy8g",
   "reporter": "cypress-multi-reporters",
     "reporterOptions": {
         "reporterEnabled": "mochawesome",
@@ -14,7 +15,6 @@ module.exports = defineConfig({
     },
   e2e: {
     baseUrl: "http://localhost:3000",
-    projectId: "q3wy8g",
     viewportHeight: 720,
     viewportWidth: 1280,
     setupNodeEvents(on, config) {
