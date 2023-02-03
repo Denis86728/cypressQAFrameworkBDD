@@ -31,6 +31,7 @@
     "start": "serve --listen ${PORT:-3000}",
     "test": "cypress run --browser chrome",
     "cy:open": "cypress open",
+    "cy:record:run": "cypress run --record --key 663fb42f-f5f5-4a93-9212-c3aeb66db140",
     "cy:run:chrome": "cypress run --browser chrome",
     "cy:run:firefox": "cypress run --browser firefox",
     "clean:reports": "rm -R -f cypress/reports && mkdir cypress/reports && mkdir cypress/reports/mochareports",
