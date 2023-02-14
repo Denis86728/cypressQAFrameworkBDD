@@ -2,8 +2,11 @@ const { defineConfig } = require('cypress')
 
 module.exports = defineConfig({
   watchForFilesChanges: false,
-  numTestsKeptInMemory: 0,
+  numTestsKeptInMemory: 50,
   video: false,
+  videosFolder: "cypress/videos",
+  screenshotOnRunFailure: true,
+  screenshotsFolder: 'cypress/screenshots',
   defaultCommandTimeout: 10000,
   chromeWebSecurity: false,
   viewPortWidth: 1418,
@@ -14,8 +17,9 @@ module.exports = defineConfig({
   pageLoadTimeout: 60000,
   requestTimeout: 15000,
   responseTimeout: 15000,
+  trashAssetsBeforeRuns: true,
   failOnStatusCode: false,
-  projectId: 'q3wy8g',
+  'projectId': 'q3wy8g',
   "reporter": "cypress-multi-reporters",
     "reporterOptions": {
         "reporterEnabled": "mochawesome",
@@ -30,7 +34,7 @@ module.exports = defineConfig({
   e2e: {
     viewportHeight: 720,
     viewportWidth: 1280,
-    baseUrl: "http://www.google.ro",
+    baseUrl: "http://localhost:3000",
     setupNodeEvents(on, config) {
       return require('./cypress/plugins/index.js')(on, config)
     },
