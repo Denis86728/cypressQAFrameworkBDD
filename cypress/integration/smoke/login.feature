@@ -40,8 +40,8 @@ When I click on "Remember me" button
 Then The checkbox is checked successfully 
 And The checkbox is unchecked if I click again on "Remember me" button
 
-# Scenario: Check if the functionality of "Don't have an account" button
-# Given I navigate to the application 
-# When I click "Don't have an account" button 
-# Then I've been redirected to "SignUp" page 
+Scenario: Check if the functionality of "Don't have an account" button
+Given I navigate to the application 
+When I click "Dont have an account" button 
+Then I am redirected to "Sign Up" page
 

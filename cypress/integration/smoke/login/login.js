@@ -83,9 +83,9 @@ And('The checkbox is unchecked if I click again on "Remember me" button', () => 
 })
 
 //6 
-When("I click 'Don't have an account' button", () => {
+When('I click "Dont have an account" button', () => {
     loginPage.getDontHaveAccountButton().click()
 })
-Then("I've been redirected to 'Sign Up' page", () => {
+Then('I am redirected to "Sign Up" page', () => {
     basePage.assertUrl("/signup")
 })
