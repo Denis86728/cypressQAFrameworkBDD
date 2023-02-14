@@ -1,25 +1,28 @@
 export default class BasePage {
-	static wait(ms) {
+	 wait(ms) {
 		cy.wait(ms)
 	}
-	static logInfo(message) {
+	 logInfo(message) {
 		cy.log(message)
 	}
+	 navigateToApp(url){
+		cy.visit(url)
+	 }
+	 assertUrl(pageName){
+		cy.url().should("contain", pageName)
+	 }
 	//Handing the device emulation
-	static setMobileViewPort() {
+	 setMobileViewPort() {
 		cy.viewport('iphone-x')
 	}
-	static setTabletViewPort() {
+	 setTabletViewPort() {
 		cy.viewport('ipad-2')
 	}
-	static setDesktopViewPort() {
+	 setDesktopViewPort() {
 		cy.viewport('macbook-13')
 	}
-	static setLargeDesktopViewPort() {
+	 setLargeDesktopViewPort() {
 		cy.viewport(1920, 1080)
 	}
-
-	assertAdminUrl(adminPageURL) {
-		cy.assertAdminUrl(adminPageURL)
-	}
+	
 }
