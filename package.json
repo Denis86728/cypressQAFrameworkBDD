@@ -14,8 +14,8 @@
     "clean:videos": "rm -R -f cypress/videos && mkdir cypress/videos",
     "pretest": "npm run clean:reports",
     "scripts": "cypress run",
-    "combine-reports": "mochawesome-mergecypress/reports/mocha/*.json > cypress/reports/mochareports/report.json",
-    "generate-report": "marge cypress/reports/mochareports/report.json -f report -o cypress/reports/mochareports",
+    "combine-reports": "npx mochawesome-merge cypress/reports/mocha/*.json > cypress/reports/testResultReport.json",
+    "generate-report": "npx marge cypress/reports/testResultReport.json --reportDir ./ --inline ",
     "posttest": "npm run combine-reports && npm run generate-report",
     "wdio": "wdio run ./wdio.conf.js"
   },
@@ -29,7 +29,7 @@
     "cases",
     "smoke"
   ],
-  "author": "DenisP",
+  "author": "QaEnginner",
   "license": "ISC",
   "dependencies": {
     "@types/lodash": "^4.14.181",
