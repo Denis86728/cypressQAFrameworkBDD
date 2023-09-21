@@ -1,7 +1,7 @@
 import { After, And, Given, Then, When } from 'cypress-cucumber-preprocessor/steps'
-import BasePage from '../../../page-objects/pages/basePage'
-import LoginPage from '../../../page-objects/pages/loginPage'
-import HomePage from "../../../page-objects/pages/homePage"
+import BasePage from '../../../page-objects/pages/web/basePage'
+import LoginPage from '../../../page-objects/pages/web/loginPage'
+import HomePage from "../../../page-objects/pages/web/homePage"
 
 const basePage = new BasePage()
 const loginPage = new LoginPage()

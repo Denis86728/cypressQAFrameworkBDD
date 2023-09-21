@@ -1,4 +1,4 @@
-const { defineConfig } = require('cypress')
+const { defineConfig } = require('cypress');
 
 module.exports = defineConfig({
   watchForFilesChanges: false,
@@ -31,14 +31,23 @@ module.exports = defineConfig({
             "json": true
         }
     },
+    
   e2e: {
     viewportHeight: 720,
     viewportWidth: 1280,
+    "env": {
+      "db": {
+        "host": "localhost",
+        "user": "root",
+        "password": "root",
+        "database": "HR"
+      }
+    },
     baseUrl: "http://localhost:3000",
     setupNodeEvents(on, config) {
       return require('./cypress/plugins/index.js')(on, config)
     },
     excludeSpecPattern: ['*.js', '*.md'],
-    specPattern: 'cypress/integration/**/*.{jsx,ts,tsx,feature}',
+    specPattern: 'cypress/integration/**/*.{js,ts,tsx,feature}',
   },
 })

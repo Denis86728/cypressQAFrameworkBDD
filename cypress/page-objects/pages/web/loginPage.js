@@ -1,42 +1,44 @@
-export default class LoginPage {
+import BasePage from "./basePage"
+
+export default class LoginPage extends BasePage{
     getUsernameField() {
-        return cy.get("#username")
+        return super.getLocator("#username")
     }
     getPasswordField() {
-        return cy.get("#password")
+        return super.getLocator("#password")
     }
     getSignInButton() {
-        return cy.get("button[type='submit']")
+        return super.getLocator("button[type='submit']")
     }
     getSignInLabel() {
-        return cy.get(".makeStyles-paper-2 > h1")
+        return super.getLocator(".makeStyles-paper-2 > h1")
     }
     getAppLogo() {
-        return cy.get(".makeStyles-logo-3")
+        return super.getLocator(".makeStyles-logo-3")
     }
     getRememberMeCheckBox() {
-        return cy.get(".MuiFormControlLabel-root > span")
+        return super.getLocator(".MuiFormControlLabel-root > span")
     }
     getRememberMeButton() {
-        return cy.get(".MuiFormControlLabel-root > span").eq(1)
+        return super.getLocator(".MuiFormControlLabel-root > span").eq(1)
     }
     getDontHaveAccountButton() {
-        return cy.get("a[data-test='signup']")
+        return super.getLocator("a[data-test='signup']")
     }
     getValidationErrorIcon() {
-        return cy.get("div[role='alert'] > div").eq(0)
+        return super.getLocator("div[role='alert'] > div").eq(0)
     }
     getValidationErrorMessage() {
-        return cy.get("div[role='alert'] > div").eq(1)
+        return super.getLocator("div[role='alert'] > div").eq(1)
     }
     getUsernameMandatoryValidationError() {
-        return cy.get("#username-helper-text")
+        return super.getLocator("#username-helper-text")
     }
     getPasswordMandatoryValidationError() {
-        return cy.get("#password-helper-text")
+        return super.getLocator("#password-helper-text")
     }
     getBuildByCypressButton() {
-        return cy.get(".MuiBox-root.MuiBox-root-15 > div > p")
+        return super.getLocator(".MuiBox-root.MuiBox-root-15 > div > p")
     }
 
     assertUiElements(){
