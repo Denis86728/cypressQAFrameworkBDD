@@ -1,5 +1,7 @@
-import BasePage from "../../page-objects/pages/web/basePage";
+import BasePage from "../page-objects/pages/web/basePage";
 const basePage = new BasePage();
+
+//In order to execute these tests you will need to have a DB server + client installed and perform the insert and populate SQL queries from "support" folder. I recommend using DBeaver client and mandatory mySQL server.
 
 describe("SQL exercises", () => {
   it("SQL query to find the first name, last name, department name, and department id for each employee", function () {
