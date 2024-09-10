@@ -34,7 +34,7 @@ module.exports = defineConfig({
   e2e: {
     viewportHeight: 720,
     viewportWidth: 1280,
-    baseUrl: "http://localhost:3000",
+    baseUrl: "https://opensource-demo.orangehrmlive.com",
     setupNodeEvents(on, config) {
       return require('./cypress/plugins/index.js')(on, config)
     },

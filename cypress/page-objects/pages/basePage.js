@@ -7,10 +7,25 @@ export default class BasePage {
 	}
 	 navigateToApp(url){
 		cy.visit(url)
-	 }
-	 assertUrl(pageName){
-		cy.url().should("contain", pageName)
-	 }
+	}
+	getSelector(selector) {
+        return cy.get(selector);
+    }
+    getSelectorByText(text) {
+        return cy.contains(text)
+    }
+	 assertContainsUrl(path) {
+		cy.url().should("contain", path);
+	}
+	  assertEqualsUrl(url) {
+		cy.url().should("eq", url);
+	}
+	  assertIfUserScrolledDown() {
+		cy.window().its("scrollY").should("not.equal", 0);
+	}
+	  assertIfUserScrolledUp() {
+		cy.window().its("scrollY").should("equal", 0);
+	}
 	//Handing the device emulation
 	 setMobileViewPort() {
 		cy.viewport('iphone-x')

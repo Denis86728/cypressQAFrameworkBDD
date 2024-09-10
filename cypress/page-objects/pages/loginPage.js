@@ -1,53 +1,39 @@
-export default class LoginPage {
+import BasePage from "./basePage"
+
+export default class LoginPage extends BasePage{
     getUsernameField() {
-        return cy.get("#username")
+        return super.getSelector("input[name='username']")
     }
     getPasswordField() {
-        return cy.get("#password")
+        return super.getSelector("input[name='password']")
     }
     getSignInButton() {
-        return cy.get("button[type='submit']")
-    }
-    getSignInLabel() {
-        return cy.get(".makeStyles-paper-2 > h1")
+        return super.getSelector("button[type='submit']")
     }
     getAppLogo() {
-        return cy.get(".makeStyles-logo-3")
+        return super.getSelector("div[class='orangehrm-login-logo']")
     }
-    getRememberMeCheckBox() {
-        return cy.get(".MuiFormControlLabel-root > span")
-    }
-    getRememberMeButton() {
-        return cy.get(".MuiFormControlLabel-root > span").eq(1)
-    }
-    getDontHaveAccountButton() {
-        return cy.get("a[data-test='signup']")
-    }
-    getValidationErrorIcon() {
-        return cy.get("div[role='alert'] > div").eq(0)
-    }
-    getValidationErrorMessage() {
-        return cy.get("div[role='alert'] > div").eq(1)
+    getForgotPasswordButton() {
+        return super.getSelector("div[class='orangehrm-login-forgot']")
     }
     getUsernameMandatoryValidationError() {
-        return cy.get("#username-helper-text")
+        return super.getSelector("div[class='oxd-form-row'] > div > span").eq(1)
     }
     getPasswordMandatoryValidationError() {
-        return cy.get("#password-helper-text")
+        return super.getSelector("div[class='oxd-form-row'] > div > span").eq(2)
     }
-    getBuildByCypressButton() {
-        return cy.get(".MuiBox-root.MuiBox-root-15 > div > p")
+    getSocialMediaButtonByIndex(index){
+        return super.getSelector(`div[class='orangehrm-login-footer-sm'] > a:nth-child(${index})`)
     }
 
     assertUiElements(){
         this.getAppLogo().should("be.visible")
-        this.getDontHaveAccountButton().should("be.visible")
-        this.getSignInLabel().should("be.visible")
         this.getUsernameField().should("be.visible")
         this.getPasswordField().should("be.visible")
-        this.getRememberMeCheckBox().should("be.visible")
-        this.getRememberMeButton().should("be.visible")
         this.getSignInButton().should("be.visible")
-        this.getBuildByCypressButton().should("be.visible")
+        this.getForgotPasswordButton().should("be.visible")
+        for(let i=1; i<=4; i++){
+            return this.getSocialMediaButtonByIndex(i).should("be.visible")
+        }
     }
 }

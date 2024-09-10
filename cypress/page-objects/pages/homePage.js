@@ -1,5 +1,7 @@
-export default class HomePage {
-    getHomeButton(){
-        return cy.get("a[data-test='sidenav-home']")
+import BasePage from "./basePage";
+
+export default class HomePage extends BasePage{
+    getUserDropDownTab() {
+        return super.getSelector("span[class='oxd-userdropdown-tab']")
     }
 }

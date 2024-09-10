@@ -25,11 +25,12 @@ When('I insert the correct username and password', function()
     loginPage.getPasswordField().type(this.data.Password)
     loginPage.getPasswordField().should("not.be.null")
 })
-And('I click "Sign in" button', () => {
+And('I click "Login" button', () => {
     loginPage.getSignInButton().click()
 })
 Then('The user is logged in and redirected to "Home" page', () => {
-    homePage.getHomeButton().should("be.visible")
+    basePage.assertContainsUrl('web/index.php/dashboard/index')
+    homePage.getUserDropDownTab().should("be.visible")
 })
 
 //2
@@ -64,7 +65,7 @@ Then('Both mandatory validation errors are displayed', () => {
 
 //4
 When("I observe the login page", () => {
-    basePage.assertUrl("/signin")
+    basePage.assertContainsUrl("/web/index.php/auth/login")
 })
 Then("The correct elements are displayed in the page", () => {
     loginPage.assertUiElements()
