@@ -7,11 +7,11 @@ Provide support for Mobile testing. WebDriverIO is installed. You just need to u
 Provide support for DB testing
 
 Getting started: 
-1. npm install - install all t.he dependencies
+1. npm install - install all the dependencies
 2. All the command scripts can be found in cypress.configs.js
-3. In order to open the cypress modal run --npm run cy:open--
-4. POM is used as a design pattern. All web elements are stored in /cypress/page-objects folder. The elements are encapsulated in methods where the classes with methods are imported into test files
-5. Those are the details for FE tests. Support for BE will be added in the near future
+3. To open the cypress modal run --npm run cy:open--
+4. POM is used as a design pattern. All web elements are stored in /cypress/page-objects folder. The components are encapsulated in methods where the classes with methods are imported into test files
+5. Those are the details for FE tests. Support for BE will be added soon
 
 Support for mobile testing:
 1. In order to run the mobile mock test you will need to have installed: Android Studio and Appium Server
